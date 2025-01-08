@@ -3,54 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <section class="container">
-        <h1 class="container__titulo">Piedra Papel o Tijeras</h1>
+        <h1 class="container__titulo">Rock - Paper - Scissor</h1>
         <section class="container__reglas">
-            <p><span id="reglas-subtitulo">Reglas:</span> Las reglas se destribuyen de la siguiente manera:</p>
+            <p><span id="reglas-subtitulo">Rules:</span> The rules willl be stablished in the next way:</p>
             <ul>
-                <li>La piedra le gana a la tijera</li>
-                <li>Tijera le gana al papel</li>
-                <li>El papel le gana a la piedra</li>
+                <li>The rock beats scissor</li>
+                <li>The scissor beats paper</li>
+                <li>The paper beats rock</li>
             </ul>
-            <p>El primero en ganar 5 veces gana.</p>
+            <p>First one reaching <span>5</span> points win</p>
         </section>
-        <section class="container__juego">
-            <h2>Resultados del juego:</h2>
-            <div class="container__juego__resultados">
+        <section class="container__juego" id="container__juego">
+            <h2>Game results:</h2>
+            <div class="container__juego__resultados" id="container__resultados">
                 <div class="container__juego__resultados__box" id="container__juego__resultados--player1">
-                    <img class="container__juego__resultados__img" src="assets/papel.svg" />
-                    <p>Jugador 1: <span class="container__juego__resultados__item">Tijeras</span></p>
-                    <span class="container__ganador">GANADOR</span>
+                    <img class="container__juego__resultados__img" id="result__player1__img">
+                    <p>Player 1: <span class="container__juego__resultados__item" id="result__player1__item"></span></p>
+                    <span class="container__ganador"></span>
                 </div>
+                <p id="round__result"></p>
                 <div class="container__juego__resultados__box" id="container__juego__resultados--player2">
-                    <img class="container__juego__resultados__img" src="assets/tijera.svg"/>
-                    <p>Jugador 2: <span class="container__juego__resultados__item">Papel</span></p>
-                    <span class="container__ganador">GANADOR</span>
+                    <img class="container__juego__resultados__img" id="result__player2__img"/>
+                    <p>Player 2: <span class="container__juego__resultados__item" id="result__player2__item"></span></p>
+                    <span class="container__ganador"></span>
                 </i>
             </div>
         </section>
         <section class="container__marcador-entrada">
             <div class="container__marcador">
-                <h2>Marcador:</h2>
+                <h2>Score Board:</h2>
                 <div class="marcador__jugadores">
-                    <p class="marcador__jugadores__nombre">Player 1: <span class="marcador__jugadores__contador">2</span></p>
-                    <p class="marcador__jugadores__nombre">Player 2: <span class="marcador__jugadores__contador">3</span></p>
+                    <p class="marcador__jugadores__nombre">Player 1: <span class="marcador__jugadores__contador" id="jugador1__contador">0</span></p>
+                    <p class="marcador__jugadores__nombre">Player 2: <span class="marcador__jugadores__contador" id="jugador2__contador">0</span></p>
                 </div>
             </div>
             <div class="container___entrada">
-                <label for="juego-items">Ingresa el item a utilizar:</label>
+                <label for="juego-items">Select an item to use:</label>
                 <select name="container___entrada__select" id="juego-items">
-                    <option value="piedra" class="container__entrada__select__opciones">Piedra</option>
-                    <option value="papel" class="container__entrada__select__opciones">Papel</option>
-                    <option value="tijera" class="container__entrada__select__opciones">Tijera</option>
+                    <option value="rock" class="container__entrada__select__opciones">Rock</option>
+                    <option value="paper" class="container__entrada__select__opciones">Paper</option>
+                    <option value="scissor" class="container__entrada__select__opciones">Scissor</option>
                 </select>
             </div>
         </section>
-        <button type="button" class="container__jugar-btn">Play</button>
+        <div id="fondo"></div>
+        <dialog id="dialog-element">
+            <div id="dialog">
+                <div id="dialog__results">
+                    <h2>Final results:</h2>
+                    <p>Player 1: <span id="dialog__player1__result"></span> points.</p>
+                    <p>Player 2: <span id="dialog__player2__result"></span> points.</p>
+                    <p><span id="dialog__result__winner"></span></p>
+                </div>
+                <div id="dialog__selection">
+                    <p>Would you like to play another game?</p>
+                    <div id="dialog__selection__btns">
+                        <button id="dialog__yes">Yes</button>
+                        <button id="dialog__no">No</button>
+                    </div>
+                </div>
+            </div>
+            <button id="close-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" stroke-width="2"> <path d="M18 6l-12 12"></path> <path d="M6 6l12 12"></path> </svg> </button>
+        </dialog>
+        <button type="button" class="container__btn" id="play-btn">Play</button>
+        <button type="button" class="container__btn" id="restart-btn">Restart</button>
     </section>
     <script src="script.js"></script>  
 </body>
