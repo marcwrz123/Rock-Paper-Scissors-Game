@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="container">
+        <h1 class="container__titulo">Piedra Papel o Tijeras</h1>
+        <section class="container__reglas">
+            <p><span id="reglas-subtitulo">Reglas:</span> Las reglas se destribuyen de la siguiente manera:</p>
+            <ul>
+                <li>La piedra le gana a la tijera</li>
+                <li>Tijera le gana al papel</li>
+                <li>El papel le gana a la piedra</li>
+            </ul>
+            <p>El primero en ganar 5 veces gana.</p>
+        </section>
+        <section class="container__juego">
+            <h2>Resultados del juego:</h2>
+            <div class="container__juego__resultados">
+                <div class="container__juego__resultados__box" id="container__juego__resultados--player1">
+                    <img class="container__juego__resultados__img" src="assets/papel.svg" />
+                    <p>Jugador 1: <span class="container__juego__resultados__item">Tijeras</span></p>
+                    <span class="container__ganador">GANADOR</span>
+                </div>
+                <div class="container__juego__resultados__box" id="container__juego__resultados--player2">
+                    <img class="container__juego__resultados__img" src="assets/tijera.svg"/>
+                    <p>Jugador 2: <span class="container__juego__resultados__item">Papel</span></p>
+                    <span class="container__ganador">GANADOR</span>
+                </i>
+            </div>
+        </section>
+        <section class="container__marcador-entrada">
+            <div class="container__marcador">
+                <h2>Marcador:</h2>
+                <div class="marcador__jugadores">
+                    <p class="marcador__jugadores__nombre">Player 1: <span class="marcador__jugadores__contador">2</span></p>
+                    <p class="marcador__jugadores__nombre">Player 2: <span class="marcador__jugadores__contador">3</span></p>
+                </div>
+            </div>
+            <div class="container___entrada">
+                <label for="juego-items">Ingresa el item a utilizar:</label>
+                <select name="container___entrada__select" id="juego-items">
+                    <option value="piedra" class="container__entrada__select__opciones">Piedra</option>
+                    <option value="papel" class="container__entrada__select__opciones">Papel</option>
+                    <option value="tijera" class="container__entrada__select__opciones">Tijera</option>
+                </select>
+            </div>
+        </section>
+        <button type="button" class="container__jugar-btn">Play</button>
+    </section>
+    <script src="script.js"></script>  
+</body>
+</html>
